@@ -34,5 +34,18 @@ class StudentManager:
     def update_student(self, roll, name=None, grade=None):
         """Updates a student's name and/or grade."""
         students = self.view_students()
+        for student in students:
+            if student["roll"] == roll:
+                if name:
+                    student["name"] = name
+                if grade:
+                    student["grade"] = grade
+                updated = True
+        if updated:
+            with open(self.filename, "w") as f:
+                for student in students:
+                    f.write(f'{student[name]},{student["roll"]},{student["grade"]}\n')
+            return "Student record updated successfully!"
+        else:
+            return "Student not found"
         
-    
