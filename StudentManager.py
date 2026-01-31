@@ -48,4 +48,12 @@ class StudentManager:
             return "Student record updated successfully!"
         else:
             return "Student not found"
-        
+    
+    def delete_student(self, roll):
+        """Deletes a student by roll number."""
+        students = self.view_students()
+        students = [s for s in students if s["roll"] != roll]
+        with open(self.filename, "w") as f:
+            for student in students:
+                f.write(f'{student["name"]},{student["roll"]},{student["grade"]}\n')
+        return "Student deleted successfully!"
