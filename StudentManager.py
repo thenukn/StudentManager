@@ -13,6 +13,7 @@ class StudentManager:
             # We use commas to separate data so we can split it later
             f.write(f"{name},{roll},{grade}\n")
         return "Student added successfully!"
+   
     def view_students(self):
         """Retrieves and returns all student records from the text file."""
         students = []
@@ -21,3 +22,11 @@ class StudentManager:
                 name, roll, grade = line.strip().split(",")
                 students.append({"name": name, "roll": roll, "grade": grade})
         return students 
+    
+    def search_student(self, roll):
+        """Searches for a student by roll number."""
+        students = self.view_students()
+        for student in students:
+            if student["roll"] == roll:
+                return student
+        return None
