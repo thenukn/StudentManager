@@ -30,3 +30,9 @@ class StudentManager:
             if student["roll"] == roll:
                 return student
         return None
+    
+    def update_student(self, roll, name=None, grade=None):
+        """Updates a student's name and/or grade."""
+        students = self.view_students()
+        
+    
