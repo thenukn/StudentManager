@@ -79,3 +79,14 @@ while True:
         grade = input("Grade: ").strip()
         print(manager.add_student(name, roll, grade))
     
+    elif choice == "2":
+        students = manager.view_students()
+        for student in students:
+            print(f'Name: {student["name"]}, Roll: {student["roll"]}, Grade: {student["grade"]}')                                   
+    
+    elif choice == "3":
+        roll = input("Enter roll: ")
+        student = manager.search_student(roll)
+        print(student if student else "Student not found")
+
+        
