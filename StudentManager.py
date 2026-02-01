@@ -79,38 +79,3 @@ while True:
         grade = input("Grade: ").strip()
         print(manager.add_student(name, roll, grade))
     
-    elif choice == "2":
-        students = manager.view_students()
-        if students:
-            print("\nAll Students:")
-            for s in students:
-                print(f'Name: {s["name"]}, Roll: {s["roll"]}, Grade: {s["grade"]}')
-        else:
-            print("No students found.")
-    
-    elif choice == "3":
-        roll = input("Roll to search: ").strip()
-        student = manager.search_student(roll)
-        if student:
-            print(f'Student found: Name: {student["name"]}, Roll: {student["roll"]}, Grade: {student["grade"]}')
-        else:
-            print("Student not found.")
-    
-    elif choice == "4":
-        roll = input("Roll to update: ").strip()
-        name = input("New name (leave blank to skip): ").strip()
-        grade = input("New grade (leave blank to skip): ").strip()
-        result = manager.update_student(roll, name or None, grade or None)
-        print(result)
-    
-    elif choice == "5":
-        roll = input("Roll to delete: ").strip()
-        print(manager.delete_student(roll))
-    
-    elif choice == "6":
-        print("Exiting Student Manager. Goodbye!")
-        break
-    
-    else:
-        print("Invalid choice! Try again.")
-    
