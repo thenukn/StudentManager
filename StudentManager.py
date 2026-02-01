@@ -61,6 +61,7 @@ class StudentManager:
 # Interactive Console Menu
 # -------------------------
 manager = StudentManager()
+manager.create()   # ← THIS LINE IS MISSING
 
 while True:
     print("\n--- Student Manager ---")
