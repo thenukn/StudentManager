@@ -89,4 +89,19 @@ while True:
         student = manager.search_student(roll)
         print(student if student else "Student not found")
 
-        
+    elif choice == "4":
+            roll = input("Roll to update: ")
+            name = input("New name (blank to skip): ")
+            grade = input("New grade (blank to skip): ")
+            print(manager.update_student(roll, name or None, grade or None))
+
+    elif choice == "5":
+        roll = input("Roll to delete: ")
+        print(manager.delete_student(roll))
+
+    elif choice == "6":
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice")
