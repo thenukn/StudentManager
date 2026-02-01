@@ -10,7 +10,6 @@ class StudentManager:
     def add_student(self, name, roll, grade):
         """Saves a new student record to the text file."""
         with open(self.filename, "a") as f:
-            # We use commas to separate data so we can split it later
             f.write(f"{name},{roll},{grade}\n")
         return "Student added successfully!"
    
@@ -108,3 +107,5 @@ while True:
 
     else:
         print("Invalid choice")
+
+
